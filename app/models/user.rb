@@ -1,10 +1,10 @@
 require 'digest/md5'
 class User < ActiveRecord::Base
-  attr_accessible :avatar_url, :bio, :email, :name, :password, :password_confirmation, :username
+  attr_accessible :avatar_url, :bio, :username, :email, :name, :password, :password_confirmation 
   has_secure_password
   before_validation :prep_email
   before_save :create_avatar_url
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format:{ with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i}
   validates :username, presence: true, uniqueness: true
   validates :name, presence: true
     
