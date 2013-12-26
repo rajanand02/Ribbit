@@ -1,0 +1,20 @@
+<% if current_user %>
+<%= render 'ribits/new_form' %>
+<% end %>
+<div class="panel left">
+  <h1>Public Ribbits</h1>
+  <% @ribits.each do |ribit| %>
+  <div class="ribbitWrapper">
+    <a href=" <%= user_path ribit.user %>">
+      <img class="avatar" src=" <%= ribit.user.avatar_url %>" alt="avatar" /> 
+      <span class="name">
+        <%= ribit.user.name %>
+      </span>
+    </a>
+   @ <%= ribit.user.username %>
+     <span class="time"> <%= time_ago_in_words(ribit.created_at) %></span> 
+     <p> <%= ribit.content %></p>
+    </div>
+  <% end %>
+  
+</div>

@@ -13,6 +13,7 @@
         <a href="/"><img src="/gfx/logo.png" alt="logo" /></a>
         <span>Twitter Colne</span>
         <% if current_user %>
+        <%= link_to "Public Ribbits", ribits_path %>
          <%= link_to "Log Out", logout_path %> 
         <% else %>
           <%= form_tag sessions_path do %>
