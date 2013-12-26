@@ -10,8 +10,17 @@
   <body>
     <header>
       <div class="wrapper">
-        <img src="/gfx/logo.png" alt="logo" />
+        <a href="/"><img src="/gfx/logo.png" alt="logo" /></a>
         <span>Twitter Colne</span>
+        <% if current_user %>
+         <%= link_to "Log Out", logout_path %> 
+        <% else %>
+          <%= form_tag sessions_path do %>
+            <%= text_field_tag :username, nil, placeholder: 'username' %>
+            <%= password_field_tag :password, nil, placeholder: 'password' %>
+            <%= submit_tag "Log In" %>
+          <% end %>
+        <% end %>
       </div>
     </header>
     <div id="content">
