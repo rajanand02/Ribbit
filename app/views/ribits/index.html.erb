@@ -11,10 +11,12 @@
         <%= ribit.user.name %>
       </span>
     </a>
-   @ <%= ribit.user.username %>
-     <span class="time"> <%= time_ago_in_words(ribit.created_at) %></span> 
-     <p> <%= ribit.content %></p>
-    </div>
+    @ <%= ribit.user.username %>
+    <span class="time"> <%= time_ago_in_words(ribit.created_at) %></span> 
+    <p> <%= ribit.content %></p>
+  </div>
   <% end %>
-  
+
 </div>
+
+<%= javascript_include_tag 'ribits' %>
