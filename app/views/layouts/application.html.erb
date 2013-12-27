@@ -13,11 +13,13 @@
         <a href="/"><img src="/gfx/logo.png" alt="logo" /></a>
         <span>Twitter Colne</span>
         <% if current_user %>
+        <span>
         <%= link_to "Buddies Ribbits", buddies_path %>
         <%= link_to "Public Ribbits", ribits_path %>
         <%= link_to "Public Profiles", users_path %>
         <%= link_to "My Profile", current_user %>
         <%= link_to "Log Out", logout_path %> 
+        </span>
         <% else %>
         <%= form_tag sessions_path do %>
         <%= text_field_tag :username, nil, placeholder: 'username' %>
@@ -38,6 +40,9 @@
     <footer>
       <div class="wrapper">
         Ribbit -A Twitter Colne made for fun <img src="/gfx/logo.png" alt="logo" />
+        <p>
+          <%= link_to "Github", "https://github.com/rajanand02/Ribbit", target: "_blank" %>
+        </p> 
       </div>
     </footer>
   </body>
