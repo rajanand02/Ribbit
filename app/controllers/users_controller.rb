@@ -30,10 +30,6 @@ class UsersController < ApplicationController
       follower_id: current_user.id,
       followed_id: @user.id
     ).first_or_initialize if current_user
-
-    Rails.logger.info(current_user.inspect.to_s + "************")
-    Rails.logger.info(@user.inspect.to_s + "************")
-    Rails.logger.info("*************")
   end
 
   def edit
