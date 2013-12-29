@@ -4,8 +4,9 @@
 <div id="ribbits" class = "panel left">
   <h1> 
     Ribbit Profile 
-    <%= link_to "(edit profile)", edit_user_path(@user) if @user = current_user %>   
+    <%= link_to "(edit profile)", edit_user_path(@user) if @user == current_user %>   
   </h1>
+
   <div class="ribbitWrapper">
     <img class="avatar" src=" <%= @user.avatar_url %>" alt="avatar" />
     <span class="name"> <%= @user.name %></span>@ <%= @user.username %>
@@ -13,7 +14,6 @@
       <%= @user.ribits.length %> Ribbits
       <span class="spacing"> <%= @user.followers.length %> Followers</span>
       <span class="spacing"> <%= @user.followeds.length %> Following</span>
-
       <% if @user.bio %>
         <p> <%= @user.bio %></p>
       <% end %>
